@@ -17,3 +17,13 @@ terraform {
 provider "aws" {
     region = "ap-south-1"
 }
+
+variable "environment" {
+    default = "localdesk"
+    type = string
+}
+
+locals {
+    bucket_name = "mylocals3bucket-${var.environment}"
+    vpc_name = "mylocalvpc-${var.environment}"
+}
