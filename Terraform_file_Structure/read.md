@@ -9,3 +9,4 @@ backend.tf - configure where terraform stores state files
 
 terraform.tfvars - actual value of environment (don't push in git)
 terraform.tfvars.example - template (can be pushed)
+git test
