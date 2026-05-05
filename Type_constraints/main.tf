@@ -1,5 +1,6 @@
 provider "aws" {
-    region = var.defaultregion
+    #region = var.defaultregion
+    region = var.config.region
 }
 
 resource "aws_instance" "ec2_instance" {

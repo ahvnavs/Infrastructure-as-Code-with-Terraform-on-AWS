@@ -33,3 +33,16 @@ variable "allowed_vm_type" {
     type = list(string)
     default = ["t2.micro", "t3.micro", "t2.small"]
 }
+
+variable "config" {
+    type = object({
+        region = string
+        monitoring = bool
+        instance_count = number
+    })
+    default = {
+        region = "ap-south-1"
+        monitoring = true
+        instance_count = 1
+    }
+}
