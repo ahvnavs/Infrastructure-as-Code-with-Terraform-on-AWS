@@ -1,6 +1,6 @@
 terraform {
     backend "s3" {
-        bucket = ""
+        bucket = "statefile-remote-backend-s3-ahvnav"
         key = "statefile/terraform.tfstate"
         encrypt = true
         region = "ap-south-1"

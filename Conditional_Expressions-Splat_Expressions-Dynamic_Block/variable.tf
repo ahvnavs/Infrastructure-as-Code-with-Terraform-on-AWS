@@ -7,7 +7,7 @@ variable "default_region" {
 variable "default_environment" {
     description = "default terraform environment"
     type = string
-    default = "localdesk"
+    default = "not_localdesk"
 }
 
 variable "instance_type" {
