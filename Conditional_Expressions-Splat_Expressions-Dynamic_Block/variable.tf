@@ -38,3 +38,28 @@ variable "instance_count" {
     description = "number of ec2 instance to create"
     type = number
 }
+
+
+variable "ingress_rules" { #list of object, dynamic block
+    description = "list of ingress rules for security group"
+    type = list(object({
+        form_port = number
+        to_port = number
+        protocol = string
+        cidr_block = list(string)
+        description = string
+    }))
+    default = [ {
+        form_port = 80
+        to_port = 80
+        protocol = "tcp"
+        cidr_block = [ "0.0.0.0/0" ]
+        description = "HTTP"
+    },{
+        form_port = 443
+        to_port = 443
+        protocol = "tcp"
+        cidr_block = [ "0.0.0.0/0" ]
+        description = "HTTPS"
+    } ]
+}
