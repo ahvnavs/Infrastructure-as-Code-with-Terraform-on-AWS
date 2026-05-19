@@ -34,3 +34,16 @@ variable "new_tag" {
         "bitch" = "aar"
     }
 }
+
+variable "instance_type" {
+    default = t4.nigga
+    validation {
+        condition = can(regex("^t[2-3]\\.", var.instance_type))
+        error_message = "it should be t2 or t3"
+    }
+}
+
+locals {
+    config_file_exists = fileexists("./config.json")
+    config_data = local.config_file_exists ? jsondecode(file("./config.json")) : {}
+}

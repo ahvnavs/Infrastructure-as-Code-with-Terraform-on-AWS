@@ -14,3 +14,13 @@ resource "aws_s3_bucket" "bucket01" {
     bucket = "niggasinghji"
     tags = merge(var.default_tag,var.new_tag)
 }
+
+output "sense" {
+    value = var.instance_type
+    sensitive = true
+}
+
+
+output "config" {
+    value = local.config_data
+}
